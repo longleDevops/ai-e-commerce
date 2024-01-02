@@ -6,6 +6,7 @@ import {StoreModal} from "@/components/modals/store-modal"
 
 //Avoid the hydration error trick
 export const ModalProvider = () => {
+  
   const[isMounted, setIsMounted] = useState(false);
 
   useEffect(()=>{
