@@ -44,10 +44,14 @@ export const StoreModal = () =>{
     //At the beginning, set loading is true to stop form's functionality, then set to true again at the end
     try{
       setLoading(true)
-
+      
       const response = await axios.post('api/stores', values)
 
       toast.success("Store created.")
+
+      //Instead of using router, since we want to   completely refresh the page while waiting for database loading.
+      window.location.assign(`/${response.data.id}`)
+      
 
     } catch (error) {
       toast.error("Something went wrong.")
